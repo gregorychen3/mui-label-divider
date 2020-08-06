@@ -1,5 +1,8 @@
 # mui-label-divider
 
+![Light theme](/screenshots/light.png?raw=true "Light Theme")
+![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
+
 > Labeled divider component for Material-UI / React
 
 [![NPM](https://img.shields.io/npm/v/mui-label-divider.svg)](https://www.npmjs.com/package/mui-label-divider) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
