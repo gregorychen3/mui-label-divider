@@ -13,14 +13,14 @@ npm install --save mui-label-divider
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'mui-label-divider'
-import 'mui-label-divider/dist/index.css'
+import MyComponent from "mui-label-divider";
+import "mui-label-divider/dist/index.css";
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <MyComponent />;
   }
 }
 ```
