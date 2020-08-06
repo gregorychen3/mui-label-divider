@@ -13,16 +13,14 @@ npm install --save mui-label-divider
 ## Usage
 
 ```tsx
-import React, { Component } from "react";
+import { LabelDivider } from "mui-label-divider";
+import React from "react";
 
-import MyComponent from "mui-label-divider";
-import "mui-label-divider/dist/index.css";
+const App = () => {
+  return <LabelDivider label="My Title" />;
+};
 
-class Example extends Component {
-  render() {
-    return <MyComponent />;
-  }
-}
+export default App;
 ```
 
 ## Credits
