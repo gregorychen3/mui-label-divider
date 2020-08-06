@@ -1,10 +1,8 @@
+import { LabelDivider } from "mui-label-divider";
 import React from "react";
 
-import { ExampleComponent } from "mui-label-divider";
-import "mui-label-divider/dist/index.css";
-
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />;
+  return <LabelDivider label="My Title" />;
 };
 
 export default App;
