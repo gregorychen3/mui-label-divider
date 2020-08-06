@@ -27,7 +27,7 @@ class Example extends Component {
 
 ## Credits
 
-Adapted from Material-UI from Puigcerber's original raw html/css solution at https://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle
+Adapted from Material-UI from Puigcerber's original raw html/css solution at https://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle.
 
 Inspired by https://wikiki.github.io/layout/divider/.
 
