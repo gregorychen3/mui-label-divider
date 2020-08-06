@@ -25,6 +25,10 @@ class Example extends Component {
 }
 ```
 
+## Credits
+
+Adapted form Material-UI from Puigcerber's original raw html/css solution at https://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle
+
 ## License
 
 MIT © [gregorychen3](https://github.com/gregorychen3)
