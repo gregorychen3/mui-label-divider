@@ -1,11 +1,11 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 
 // Adapted from Puigcerber's answer on https://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle
 
 const useStyles = makeStyles((theme) => ({
-  label: {
+  divider: {
     overflow: "hidden",
     textAlign: "center",
     "&::before, &::after": {
@@ -24,20 +24,35 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  label: string;
+  children: React.ReactNode;
   onClick?: () => void;
 }
-export const LabelDivider = ({ label, onClick }: Props) => {
+export const LabelDivider = ({ onClick, children }: Props) => {
   const classes = useStyles();
+
+  if (typeof children === "string") {
+    return (
+      <Typography
+        variant="subtitle2"
+        color="textSecondary"
+        align="center"
+        onClick={onClick}
+        className={clsx(classes.divider, { [classes.clickable]: onClick })}
+      >
+        {children}
+      </Typography>
+    );
+  }
+
   return (
-    <Typography
-      variant="subtitle2"
-      color="textSecondary"
-      align="center"
-      className={clsx(classes.label, { [classes.clickable]: onClick })}
+    <Box
       onClick={onClick}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      className={clsx(classes.divider, { [classes.clickable]: onClick })}
     >
-      {label}
-    </Typography>
+      {children}
+    </Box>
   );
 };
