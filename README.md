@@ -4,9 +4,6 @@
 
 [![NPM](https://img.shields.io/npm/v/mui-label-divider.svg)](https://www.npmjs.com/package/mui-label-divider) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-![Light theme](/screenshots/light.png?raw=true "Light Theme")
-![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
-
 ## Install
 
 ```bash
@@ -23,6 +20,9 @@ export default function App() {
   return <LabelDivider>SIMPLE</LabelDivider>;
 }
 ```
+
+![Light theme](/screenshots/light.png?raw=true "Light Theme")
+![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
 
 ## Usage (Children as Label)
 
@@ -54,6 +54,8 @@ export default function App() {
   );
 }
 ```
+
+![Collapsible](/screenshots/collapsible.png?raw=true "Collapsible")
 
 ## Credits
 
