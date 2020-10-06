@@ -13,17 +13,46 @@
 npm install --save mui-label-divider
 ```
 
-## Usage
+## Usage (Simple Label)
 
 ```tsx
 import { LabelDivider } from "mui-label-divider";
 import React from "react";
 
-const App = () => {
-  return <LabelDivider label="My Title" />;
+export default function App() {
+  return <LabelDivider>SIMPLE</LabelDivider>;
+}
+```
+
+## Usage (Children as Label)
+
+```tsx
+interface Props {
+  open: boolean;
+  onClick: () => void;
+}
+const CollapsibleLabelDivider = ({ open, onClick }: Props) => {
+  return (
+    <LabelDivider onClick={onClick}>
+      {open ? <ArrowDropDownIcon color="disabled" /> : <ArrowRightIcon color="disabled" />}
+      <Typography variant="subtitle2" color="textSecondary" align="center">
+        EXPANDABLE
+      </Typography>
+    </LabelDivider>
+  );
 };
 
-export default App;
+export default function App() {
+  const [open, setIsOpen] = useState(false);
+  const toggleOpen = () => setIsOpen((prev) => !prev);
+
+  return (
+    <>
+      <CollapsibleLabelDivider open={open} onClick={toggleOpen} />
+      {open && "More Content"}
+    </>
+  );
+}
 ```
 
 ## Credits
