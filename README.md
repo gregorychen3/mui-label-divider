@@ -10,51 +10,26 @@
 npm install --save mui-label-divider
 ```
 
-## Usage (Simple Label)
+## Usage Examples
 
 ```tsx
 import { LabelDivider } from "mui-label-divider";
-import React from "react";
 
 export default function App() {
-  return <LabelDivider>SIMPLE</LabelDivider>;
-}
-```
-
-![Light theme](/screenshots/light.png?raw=true "Light Theme")
-![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
-
-## Usage (Children as Label)
-
-```tsx
-interface Props {
-  open: boolean;
-  onClick: () => void;
-}
-const CollapsibleLabelDivider = ({ open, onClick }: Props) => {
-  return (
-    <LabelDivider onClick={onClick}>
-      {open ? <ArrowDropDownIcon color="disabled" /> : <ArrowRightIcon color="disabled" />}
-      <Typography variant="subtitle2" color="textSecondary" align="center">
-        EXPANDABLE
-      </Typography>
-    </LabelDivider>
-  );
-};
-
-export default function App() {
-  const [open, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen((prev) => !prev);
-
   return (
     <>
-      <CollapsibleLabelDivider open={open} onClick={toggleOpen} />
-      {open && "More Content"}
+      <LabelDivider label="SIMPLE" />
+      <LabelDivider label="CLICKABLE" onClick={() => alert("clicked")} />
+      <LabelDivider label="COLLAPSIBLE" collapsible>
+        More Content
+      </LabelDivider>
     </>
   );
 }
 ```
 
+![Light theme](/screenshots/light.png?raw=true "Light Theme")
+![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
 ![Collapsible](/screenshots/collapsible.png?raw=true "Collapsible")
 
 ## Credits
