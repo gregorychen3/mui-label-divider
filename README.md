@@ -30,7 +30,7 @@ export default function App() {
 
 ![Light theme](/screenshots/light.png?raw=true "Light Theme")
 ![Dark theme](/screenshots/dark.png?raw=true "Dark Theme")
-![Collapsible](/screenshots/collapsible.png?raw=true "Collapsible")
+![Collapsible](/screenshots/collapsible.gif?raw=true "Collapsible")
 
 ## Credits
 
