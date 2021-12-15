@@ -13,16 +13,23 @@ npm install --save mui-label-divider
 ## Usage Examples
 
 ```tsx
-import { LabelDivider } from "mui-label-divider";
+import { CollapsibleLabelDivider, LabelDivider } from "mui-label-divider";
+import { useState } from "react";
 
 export default function App() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <LabelDivider label="SIMPLE" />
       <LabelDivider label="CLICKABLE" onClick={() => alert("clicked")} />
-      <LabelDivider label="COLLAPSIBLE" collapsible>
-        More Content
-      </LabelDivider>
+      <CollapsibleLabelDivider
+        label={`${open ? "HIDE" : "SHOW"} CONTENT`}
+        open={open}
+        onClick={() => setOpen((x) => !x)}
+      >
+        content
+      </CollapsibleLabelDivider>
     </>
   );
 }
