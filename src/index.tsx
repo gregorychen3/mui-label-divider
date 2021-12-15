@@ -1,7 +1,7 @@
 import { ArrowDropDown, ArrowRight } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import React, { DOMAttributes, useState } from "react";
+import React, { DOMAttributes } from "react";
 
 const Header = styled("div")(({ onClick, theme }) => ({
   cursor: onClick ? "pointer" : undefined,
@@ -28,33 +28,39 @@ const Header = styled("div")(({ onClick, theme }) => ({
   "&::after": { left: theme.spacing(1), marginRight: "-50%" },
 }));
 
-type LabelDividerProps = {
+export type LabelDividerProps = {
   label: string;
-  collapsible?: boolean;
 } & DOMAttributes<HTMLDivElement>;
 
 export const LabelDivider = (props: LabelDividerProps) => {
-  const { label, collapsible = false, onClick, children, ...restProps } = props;
+  const { label, ...rest } = props;
 
-  const [open, setIsOpen] = useState(false);
+  return (
+    <Header {...rest}>
+      <Typography variant="subtitle2" color="textSecondary">
+        {label}
+      </Typography>
+    </Header>
+  );
+};
 
-  let handleClick = undefined;
-  if (collapsible || onClick) {
-    handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      collapsible && setIsOpen((prev) => !prev);
-      onClick?.(e);
-    };
-  }
+export type CollapsibleLabelDividerProps = {
+  label: string;
+  open: boolean;
+} & DOMAttributes<HTMLDivElement>;
+
+export const CollapsibleLabelDivider = (props: CollapsibleLabelDividerProps) => {
+  const { label, open, children, ...restProps } = props;
 
   return (
     <div>
-      <Header onClick={handleClick} {...restProps}>
-        {collapsible && (open ? <ArrowDropDown color="disabled" /> : <ArrowRight color="disabled" />)}
+      <Header {...restProps}>
+        {open ? <ArrowDropDown color="disabled" /> : <ArrowRight color="disabled" />}
         <Typography variant="subtitle2" color="textSecondary">
           {label}
         </Typography>
       </Header>
-      {collapsible && open && children}
+      {open && children}
     </div>
   );
 };
