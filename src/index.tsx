@@ -1,7 +1,7 @@
 import { ArrowDropDown, ArrowRight } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import React, { DOMAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 
 const Header = styled("div")(({ onClick, theme }) => ({
   cursor: onClick ? "pointer" : undefined,
@@ -30,7 +30,7 @@ const Header = styled("div")(({ onClick, theme }) => ({
 
 export type LabelDividerProps = {
   label: string;
-} & DOMAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 export const LabelDivider = (props: LabelDividerProps) => {
   const { label, ...rest } = props;
@@ -47,20 +47,20 @@ export const LabelDivider = (props: LabelDividerProps) => {
 export type CollapsibleLabelDividerProps = {
   label: string;
   open: boolean;
-} & DOMAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
 export const CollapsibleLabelDivider = (props: CollapsibleLabelDividerProps) => {
-  const { label, open, children, ...restProps } = props;
+  const { label, open, children, ...rest } = props;
 
   return (
-    <div>
-      <Header {...restProps}>
+    <React.Fragment>
+      <Header {...rest}>
         {open ? <ArrowDropDown color="disabled" /> : <ArrowRight color="disabled" />}
         <Typography variant="subtitle2" color="textSecondary">
           {label}
         </Typography>
       </Header>
       {open && children}
-    </div>
+    </React.Fragment>
   );
 };
