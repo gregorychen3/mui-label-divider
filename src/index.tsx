@@ -49,13 +49,19 @@ export type CollapsibleLabelDividerProps = {
   open: boolean;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const CollapsibleLabelDivider = (props: CollapsibleLabelDividerProps) => {
+export const CollapsibleLabelDivider = (
+  props: CollapsibleLabelDividerProps
+) => {
   const { label, open, children, ...rest } = props;
 
   return (
     <React.Fragment>
       <Header {...rest}>
-        {open ? <ArrowDropDown color="disabled" /> : <ArrowRight color="disabled" />}
+        {open ? (
+          <ArrowDropDown color="disabled" />
+        ) : (
+          <ArrowRight color="disabled" />
+        )}
         <Typography variant="subtitle2" color="textSecondary">
           {label}
         </Typography>
