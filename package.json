@@ -1,6 +1,6 @@
 {
   "name": "mui-label-divider",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Labeled divider component for Material-UI / React",
   "keywords": [
     "label",
@@ -17,6 +17,7 @@
   "repository": "gregorychen3/mui-label-divider",
   "license": "MIT",
   "author": "gregorychen3",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
