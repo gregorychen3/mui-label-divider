@@ -17,6 +17,7 @@
   "repository": "gregorychen3/mui-label-divider",
   "license": "MIT",
   "author": "gregorychen3",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
