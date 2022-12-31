@@ -1,6 +1,6 @@
 {
   "name": "mui-label-divider",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Labeled divider component for Material-UI / React",
   "keywords": [
     "label",
@@ -58,6 +58,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "sideEffects": false,
   "engines": {
     "node": ">=16",
     "npm": ">=8"
